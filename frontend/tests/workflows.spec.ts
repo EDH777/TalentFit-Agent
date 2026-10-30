@@ -1,0 +1,57 @@
+import { test, expect, type Page } from '@playwright/test'
+
+async function login(page: Page, user: string) {
+  await page.goto('/login')
+  await page.getByLabel('用户名').fill(user)
+  await page.getByLabel('密码', { exact: true }).fill('test-' + user)
+  await page.getByRole('button', { name: '登 录' }).click()
+  await expect(page.getByRole('heading', { name: '工作台' })).toBeVisible()
+}
+
+test('人事管理完整流程与文件上传', async ({ page }) => {
+  await login(page, 'hr')
+  await page.getByRole('menuitem', { name: '人才知识库' }).click()
+  await page.getByRole('button', { name: '手动入库' }).click()
+  await page.getByLabel('姓名', { exact: true }).fill('网页验收张三')
+  await page.getByRole('combobox', { name: '岗位分类', exact: true }).press('ArrowDown')
+  await page.locator('.ant-select-dropdown:visible').getByTitle('后端开发工程师', { exact: true }).click()
+  await page.getByLabel('技能标签').fill('Java, Spring')
+  await page.getByLabel('简历正文').fill('工作经历：5年Java开发，负责订单系统和Spring接口。教育背景：计算机本科。项目经验：企业ERP开发。')
+  await page.getByRole('button', { name: '保 存' }).click()
+  await expect(page.getByRole('button', { name: '网页验收张三', exact: true })).toBeVisible()
+  await page.getByRole('button', { name: /编辑/ }).click()
+  await page.getByRole('combobox', { name: '岗位分类', exact: true }).press('ArrowDown')
+  await page.locator('.ant-select-dropdown:visible').getByTitle('AI应用开发工程师', { exact: true }).click()
+  await page.getByRole('button', { name: '保 存' }).click()
+  await expect(page.getByRole('cell', { name: 'AI应用开发工程师', exact: true })).toBeVisible()
+  await page.reload()
+  await expect(page.getByRole('button', { name: '网页验收张三', exact: true })).toBeVisible()
+  await page.getByRole('button', { name: /删除/ }).click()
+  await page.getByRole('button', { name: '确 定' }).click()
+  await expect(page.getByRole('button', { name: '网页验收张三', exact: true })).toHaveCount(0)
+  await page.locator('input[type=file]').setInputFiles({ name: '网页验收.txt', mimeType: 'text/plain', buffer: Buffer.from('姓名：验收李四\n工作经历：5年Java开发经验。项目经验：负责采购系统设计与部署。教育背景：计算机本科。') })
+  await page.getByRole('button', { name: '开始入库', exact: true }).click()
+  await expect(page.getByRole('button', { name: '验收李四', exact: true })).toBeVisible({ timeout: 15000 })
+  await page.screenshot({ path: 'test-results/knowledge-base.png', fullPage: true })
+})
+
+test('管理员限制与历史消息恢复', async ({ page }) => {
+  await login(page, 'admin')
+  await expect(page.getByRole('menuitem', { name: '人才知识库' })).toHaveCount(0)
+  await page.goto('/candidates')
+  await expect(page.getByRole('heading', { name: '工作台' })).toBeVisible()
+  await page.getByRole('menuitem', { name: '人才助手' }).click()
+  await page.getByLabel('聊天消息').fill('推荐Java工程师')
+  await page.getByRole('button', { name: /发送/ }).click()
+  await expect(page.getByRole('alert')).toContainText('模型', { timeout: 15000 })
+  await page.reload()
+  await expect(page.locator('.message-bubble').filter({ hasText: '推荐Java工程师' })).toBeVisible()
+})
+
+test('错误密码无法进入系统', async ({ page }) => {
+  await page.goto('/login')
+  await page.getByLabel('用户名').fill('hr')
+  await page.getByLabel('密码', { exact: true }).fill('wrong-password')
+  await page.getByRole('button', { name: '登 录' }).click()
+  await expect(page.getByRole('alert')).toContainText('用户名或密码错误')
+})

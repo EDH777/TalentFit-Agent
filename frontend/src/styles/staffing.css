@@ -1,0 +1,102 @@
+.staffing-page { min-width: 0; color: var(--color-text, #243247); }
+.staffing-list-page { max-width: 1600px; }
+.staffing-list-page .staffing-page-heading { align-items: center; gap: 10px; margin-bottom: 10px; }
+.staffing-list-page .staffing-page-heading p { margin: 0; }
+.staffing-list-card { margin-top: 10px; }
+.staffing-list-card .ant-card-body { padding: 10px 12px; }
+.staffing-list-card .ant-table-thead > tr > th { padding: 8px; }
+.staffing-list-card .ant-table-tbody > tr > td { padding: 5px 8px; }
+.staffing-list-card .ant-table-tbody .ant-btn { padding-inline: 6px; }
+.staffing-list-card .ant-tabs-nav { margin-bottom: 8px; }
+.staffing-table-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.staffing-table-toolbar .ant-select { width: 120px; }
+.staffing-page h2.ant-typography { margin: 4px 0 8px; font-size: 20px; line-height: 28px; }
+.staffing-page h3.ant-typography { font-size: 16px; margin: 0 0 12px; }
+.staffing-page h4.ant-typography { font-size: 14px; margin: 0; }
+.staffing-page-heading { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.staffing-muted { color: var(--color-muted, #59697e); font-size: 12px; overflow-wrap: anywhere; }
+.staffing-page p { margin: 8px 0; overflow-wrap: anywhere; }
+.staffing-page .ant-alert { margin-bottom: 12px; }
+.staffing-toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
+.staffing-toolbar .ant-select { min-width: 180px; }
+.staffing-project-search { width: min(360px, 100%); }
+.staffing-workspace { display: grid; grid-template-columns: minmax(260px, .9fr) minmax(290px, 1fr) minmax(380px, 1.4fr); gap: 16px; align-items: start; }
+.staffing-region { min-width: 0; padding: 16px; background: #fff; border: 1px solid #dce3ed; border-radius: 8px; }
+.staffing-requirements .ant-form-item { margin-bottom: 12px; }
+.staffing-requirements .ant-checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.staffing-date-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.staffing-date-pair > * { min-width: 0; }
+.staffing-date-pair input { width: 100%; min-width: 0; }
+.staffing-slot { border: 1px solid #dce3ed; border-radius: 6px; padding: 10px 12px; margin: 12px 0; min-width: 0; }
+.staffing-slot legend { font-size: 13px; width: auto; margin-bottom: 4px; padding: 0 4px; }
+.staffing-actions { margin-top: 12px; }
+.staffing-spaced { margin-top: 12px; }
+.staffing-full { width: 100%; }
+.staffing-empty { color: #59697e; padding: 24px 8px; line-height: 1.8; }
+.staffing-plan + .staffing-plan { border-top: 1px solid #dce3ed; margin-top: 20px; padding-top: 20px; }
+.staffing-section-heading { display: flex; align-items: center; gap: 8px; justify-content: space-between; flex-wrap: wrap; }
+.staffing-messages { display: flex; flex-direction: column; gap: 12px; max-height: 420px; overflow-y: auto; margin: 16px 0; }
+.staffing-message { max-width: 95%; border: 1px solid #dce3ed; border-radius: 8px; padding: 8px 12px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.staffing-message p { margin: 0; white-space: pre-wrap; }
+.staffing-message.user { align-self: flex-end; background: #edf3ff; }
+.staffing-message.assistant { align-self: flex-start; background: #f8fafc; }
+.staffing-composer { display: grid; gap: 8px; margin-top: 16px; }
+.staffing-composer > .ant-btn { justify-self: end; }
+.staffing-assistant { margin-top: 12px; }
+.staffing-assistant-hint { margin: 0; }
+.staffing-draft { margin-top: 8px; padding-top: 8px; border-top: 1px dashed #dce3ed; display: grid; gap: 4px; }
+.staffing-draft .ant-btn { justify-self: start; }
+.staffing-fact { margin: 16px 0; }
+.staffing-fact blockquote, .staffing-evidence blockquote { margin: 8px 0; background: #f4f6fa; padding: 8px 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.staffing-fact footer, .staffing-evidence footer { color: #59697e; font-size: 12px; margin-top: 4px; }
+.staffing-ledger-section { max-width: 900px; padding: 16px; background: #fff; border: 1px solid #dce3ed; border-radius: 8px; }
+.staffing-stepper { margin: 0 0 16px; padding: 12px 16px; background: #fff; border: 1px solid #dce3ed; border-radius: 8px; }
+.staffing-step-panel { max-width: 1080px; }
+.staffing-employee-search { max-width: 360px; margin-bottom: 10px; }
+.staffing-project-status-card { margin-bottom: 12px; }
+.staffing-project-status-head { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: center; }
+.staffing-project-status-head .ant-steps { min-width: 0; }
+.staffing-project-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 12px; align-items: start; }
+.staffing-project-main { min-width: 0; }
+.staffing-project-side { display: grid; gap: 12px; }
+.staffing-project-side .ant-card p { margin: 6px 0; }
+.staffing-section-card { margin-top: 12px; }
+.staffing-section-card > .ant-card-head { min-height: 44px; }
+.staffing-summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; }
+.staffing-summary-block { margin-top: 12px; }
+.staffing-spaced-sm { margin-top: 6px; }
+.staffing-slot-summary { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.staffing-workdays { display: grid; gap: 6px; margin: -4px 0 12px; }
+.staffing-slot-grid { display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 8px; }
+.staffing-assistant { border: 0; padding: 0; }
+.staffing-assistant > .ant-card-body { padding: 0; }
+.staffing-assistant-mode { margin-bottom: 8px; }
+@media (max-width: 640px) { .staffing-slot-grid, .staffing-summary-grid { grid-template-columns: minmax(0, 1fr); } }
+.staffing-system-prep { max-width: 1080px; margin-top: 16px; }
+.staffing-page .ant-table, .staffing-drawer .ant-table { font-variant-numeric: tabular-nums; }
+.staffing-page .ant-table-thead > tr > th, .staffing-drawer .ant-table-thead > tr > th { padding: 8px; }
+.staffing-drawer .ant-drawer-body { min-width: 0; }
+.capacity-calendar-shell { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(290px, .9fr); gap: 12px; margin-top: 12px; align-items: start; }
+.capacity-calendar-shell .ant-picker-calendar { border: 1px solid #dce3ed; border-radius: 8px; overflow: hidden; }
+.capacity-calendar-shell .ant-picker-calendar-mini .ant-picker-calendar-header { padding: 8px 10px; }
+.capacity-calendar-shell .ant-picker-calendar-date-content { min-height: 58px; }
+.capacity-calendar-shell .ant-picker-cell-today:not(.ant-picker-cell-selected) .ant-picker-calendar-date { border-color: transparent; }
+.capacity-calendar-cell { display: flex; min-height: 32px; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1px; font-size: 11px; line-height: 15px; padding: 1px 0; cursor: pointer; }
+.capacity-calendar-cell span, .capacity-calendar-cell small { display: block; white-space: nowrap; }
+.capacity-calendar-cell span { color: #1d8f5a; }
+.capacity-calendar-cell small { color: #59697e; font-size: 10px; }
+.capacity-calendar-cell.is-rest span { color: #8c8c8c; }
+.capacity-calendar-cell.is-unknown span { color: #b58321; }
+.capacity-calendar-cell.is-over span { color: #cf1322; }
+.capacity-calendar-empty { color: #b7c0cd; }
+.capacity-day-detail { min-width: 0; }
+.capacity-allocation-list { display: grid; gap: 8px; margin-top: 12px; }
+.capacity-allocation-item { display: grid; gap: 6px; padding: 8px; border: 1px solid #e2e7ef; border-radius: 6px; background: #fafbfe; }
+.capacity-allocation-item > div:first-child { min-width: 0; }
+.capacity-allocation-item > .ant-space { justify-self: start; }
+.capacity-no-allocation { margin-top: 12px; }
+@media (max-width: 980px) { .capacity-calendar-shell { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 1350px) { .staffing-workspace { grid-template-columns: minmax(260px, .85fr) minmax(320px, 1.15fr); } .staffing-results { grid-column: 1 / -1; } }
+@media (max-width: 850px) { .staffing-workspace { grid-template-columns: minmax(0, 1fr); } .staffing-results { grid-column: auto; } .staffing-page-heading { flex-wrap: wrap; } }
+@media (max-width: 850px) { .staffing-project-layout { grid-template-columns: minmax(0, 1fr); } .staffing-project-status-head { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .staffing-region, .staffing-ledger-section { padding: 12px; } .staffing-date-pair { grid-template-columns: 1fr; } .staffing-region .ant-space { max-width: 100%; } .staffing-page-heading { gap: 8px; } .staffing-page .ant-select { max-width: 100%; } }

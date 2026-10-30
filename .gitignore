@@ -1,0 +1,15 @@
+backend/.env
+backend/data/
+data/
+chAgent/
+__pycache__/
+.pytest_cache/
+*.pyc
+frontend/node_modules/
+frontend/dist/
+frontend/.test-data/
+frontend/test-results/
+frontend/playwright-report/
+*.tsbuildinfo
+.vscode/
+.idea/
